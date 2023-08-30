@@ -2,74 +2,97 @@
 <html>
 
 <head>
+    <!-- 구글 애널리틱스(데이터 수집) 기능 삽입 -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KV53KNYQB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3KV53KNYQB');
+    </script>
     <title>WEB1 - RSI</title>
+
+    <!-- link를 통해 style.css의 style를 현제 페이지에 적용 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1><a href="index.html">퀀트 투자</a></h1>
-    <ol> <!-- Ordered List -->
-        <li><a href="1.html">RSI</a></li> <!-- List -->
-        <li><a href="2.html">Stochastic</a></li>
-        <li><a href="3.html">기술적 분석</a></li>
-    </ol>
-    <!-- 동영상 삽입 -->
+    <div id="grid">
+        <!-- Ordered List -->
+        <ol>
+            <!-- List -->
+            <li><a href="1.html">RSI</a></li>
+            <li><a href="2.html">Stochastic</a></li>
+            <li><a href="3.html">기술적 분석</a></li>
+        </ol>
+        <div id="article">
+            <!-- 하이퍼링크 삽입, 새 탭에서 열기 기능 추가, 링크에 마우스를 올려놓으면 글자표시 기능 추가 -->
+            <h2><a href=https://en.wikipedia.org/wiki/Relative_strength_index target="_blank"
+                    title="위키피디아 RSI 영문 페이지">RSI</a>(투자지표)</h2>
+
+            <!-- 동영상 삽입 -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TQMayZS9o1U?si=hUmqxZ7K45oMjbQ5"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <!-- 이미지 삽입, 창의 크기에 맞춰 자동 배율 기능 추가 -->
+            <img src="RSIwiki.gif" width="560px">
+
+            <p>
+                상대강도지수(相對强度指數, 영어: relative strength index, RSI)는
+                주식, 선물, 옵션 등의 기술적 분석에 사용되는 보조 지표이다.
+                <!-- 글자 굵게 표시, 밑줄 표시 -->
+                <strong>RSI는 가격의 <u>상승압력</u>과 <u>하락압력</u> 간의 <u>상대적인 강도</u>를 나타낸다.</strong>
+                1978년 미국의 월레스 와일더(J. Welles Wilder Jr.)가 개발했다.
+            </p>
+            <br>
+
+            <h3>개념</h3>
+
+            <p>
+                RSI는 일정 기간 동안 주가가 전일 가격에 비해 상승한 변화량과 하락한 변화량의 평균값을 구하여,
+                상승한 변화량이 크면 과매수로, 하락한 변화량이 크면 과매도로 판단하는 방식이다.
+            </p>
+
+            계산 방법은 다음과 같다. 주어진 기간의 모든 날의 주가에 대해서<br>
+
+            <p>
+                1. 가격이 전일 가격보다 상승한 날의 상승분은 U(up) 값이라고 하고,<br>
+                2. 가격이 전일 가격보다 하락한 날의 하락분은 D(down) 값이라고 한다.<br>
+                3. U값과 D값의 평균값을 구하여 그것을 각각 AU(average ups)와 AD(average downs)라 한다.<br>
+                4. AU를 AD값으로 나눈 것을 RS(relative strength) 값이라고 한다.<br>
+                5. RS 값이 크다는 것은 일정 기간 하락한 폭보다 상승한 폭이 크다는 것을 의미한다.<br>
+                6. 다음 계산에 의하여 RSI 값을 구한다.<br>
+            </p>
+
+            RSI 계산 공식 :<br>
+            RSI = RS / (1 + RS)<br>
+            또는, 다음과 같이 구해도 결과는 동일하다.<br>
+            RSI = AU / (AU + AD)<br>
+            대체로 이 값은 백분율로 나타낸다.<br>
+
+            <p>
+                이 지표의 파라메터로는 기간을 며칠 동안으로 할 것인가가 있다. Welles Wilder는 14일을 사용할 것을 권유했다. 대체로 사용되는 값은 9일, 14~15일, 25~28일 등이다.
+            </p>
+
+            <p>
+                RSI 그래프는 이동평균선을 함께 나타내는 것이 보통이며, 이동평균선을 며칠선으로 할 것인가 역시 파라메터로 주어진다. RSI를 15일에 대하여 구하고 5일 이동평균선을 함께 표시하는
+                경우
+                그래프에
+                (15, 5)라고 표시해주는 것이 일반적이다.
+            </p>
+
+            <p>
+                유사한 지표로는 스토캐스틱이 있다. RSI 그래프의 형태는 fast stochastic과 비슷하게 나온다.
+            </p>
+        </div>
+    </div>
     <p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TQMayZS9o1U?si=hUmqxZ7K45oMjbQ5"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-    </p>
-    <!-- 하이퍼링크 삽입, 새 탭에서 열기 기능 추가, 링크에 마우스를 올려놓으면 글자표시 기능 추가 -->
-    <h2><a href=https://en.wikipedia.org/wiki/Relative_strength_index target="_blank"
-            title="위키피디아 RSI 영문 페이지">RSI</a>(투자지표)</h2>
-    <!-- 이미지 삽입, 창의 크기에 맞춰 자동 배율 기능 추가 -->
-    <img src="RSIwiki.gif" width="30%">
-    <p>상대강도지수(相對强度指數, 영어: relative strength index, RSI)는
-        주식, 선물, 옵션 등의 기술적 분석에 사용되는 보조 지표이다.
-        <!-- 글자 굵게 표시, 밑줄 표시 -->
-        <strong>RSI는 가격의 <u>상승압력</u>과 <u>하락압력</u> 간의 <u>상대적인 강도</u>를 나타낸다.</strong>
-        1978년 미국의 월레스 와일더(J. Welles Wilder Jr.)가 개발했다.
-    </p>
-    <br>
-
-    <h3>개념</h3>
-
-    <p>
-        RSI는 일정 기간 동안 주가가 전일 가격에 비해 상승한 변화량과 하락한 변화량의 평균값을 구하여,
-        상승한 변화량이 크면 과매수로, 하락한 변화량이 크면 과매도로 판단하는 방식이다.
-    </p>
-
-    계산 방법은 다음과 같다. 주어진 기간의 모든 날의 주가에 대해서<br>
-
-    <p>
-        1. 가격이 전일 가격보다 상승한 날의 상승분은 U(up) 값이라고 하고,<br>
-        2. 가격이 전일 가격보다 하락한 날의 하락분은 D(down) 값이라고 한다.<br>
-        3. U값과 D값의 평균값을 구하여 그것을 각각 AU(average ups)와 AD(average downs)라 한다.<br>
-        4. AU를 AD값으로 나눈 것을 RS(relative strength) 값이라고 한다.<br>
-        5. RS 값이 크다는 것은 일정 기간 하락한 폭보다 상승한 폭이 크다는 것을 의미한다.<br>
-        6. 다음 계산에 의하여 RSI 값을 구한다.<br>
-    </p>
-
-    RSI 계산 공식 :<br>
-    RSI = RS / (1 + RS)<br>
-    또는, 다음과 같이 구해도 결과는 동일하다.<br>
-    RSI = AU / (AU + AD)<br>
-    대체로 이 값은 백분율로 나타낸다.<br>
-
-    <p>
-        이 지표의 파라메터로는 기간을 며칠 동안으로 할 것인가가 있다. Welles Wilder는 14일을 사용할 것을 권유했다. 대체로 사용되는 값은 9일, 14~15일, 25~28일 등이다.
-    </p>
-
-    <p>
-        RSI 그래프는 이동평균선을 함께 나타내는 것이 보통이며, 이동평균선을 며칠선으로 할 것인가 역시 파라메터로 주어진다. RSI를 15일에 대하여 구하고 5일 이동평균선을 함께 표시하는 경우 그래프에
-        (15, 5)라고 표시해주는 것이 일반적이다.
-    </p>
-
-    <p>
-        유사한 지표로는 스토캐스틱이 있다. RSI 그래프의 형태는 fast stochastic과 비슷하게 나온다.
-    </p>
-
-    <p>
+        <!--Start of disqus script(댓글 기능)-->
     <div id="disqus_thread"></div>
     <script>
         /**
@@ -90,18 +113,20 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
             Disqus.</a></noscript>
+    <!--End of disqus script(댓글 기능)-->
     </p>
+
     <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/64ee75ecb2d3e13950ecd7bd/1h91np949';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/64ee75ecb2d3e13950ecd7bd/1h91np949';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
     <!--End of Tawk.to Script-->
 </body>

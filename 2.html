@@ -2,23 +2,55 @@
 <html>
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KV53KNYQB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3KV53KNYQB');
+    </script>
     <title>WEB1 - Stochastic</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- 글자 색상을 red로 변경
+    <h1><a href="index.html"><font color="red">퀀트 투자</font></a></h1>
+    <ol>
+        <li><a href="1.html"><font color="red">RSI</font></a></li>
+        <li><a href="2.html"><font color="red">Stochastic</font></a></li>
+        <li><a href="3.html"><font color="red">기술적 분석</font></a></li>
+    </ol>
+ -->
+    <!-- Stochastic 글자만 색상 red로 변경, 밑줄 추가
     <h1><a href="index.html">퀀트 투자</a></h1>
-    <ol> <!-- Ordered List -->
-        <li><a href="1.html">RSI</a></li> <!-- List -->
-        <li><a href="2.html">Stochastic</a></li>
+    <ol> 
+        <li><a href="1.html">RSI</a></li> 
+        <li><a href="2.html" style="color:red; text-decoration: underline;">Stochastic</a></li>
         <li><a href="3.html">기술적 분석</a></li>
     </ol>
-
-    <h2>Stochastic</h2>
-    <p>
-        스토캐스틱(영어: stochastic)은 주식투자의 기술적 분석에 사용되는 보조 지표로, 공식 명칭은 스토캐스틱 오실레이터(영어: stochastic oscillator)이다. 스토캐스틱 지표는
-        1950년대 William Dunnigun이 소개하고 George Lane이 널리 보급하였다. 고승덕은 증권 전문가로 활동할 당시, 스토캐스틱이 실전에서 잘 맞는다는 의미로 '마법의 지표'라고 부르기도
-        했다.
-    </p>
+-->
+    <h1><a href="index.html">퀀트 투자</a></h1>
+    <div id="grid">
+        <ol> <!-- Ordered List -->
+            <li><a href="1.html">RSI</a></li> <!-- List -->
+            <li><a href="2.html">Stochastic</a></li>
+            <li><a href="3.html">기술적 분석</a></li>
+        </ol>
+        <div id="article">
+            <h2>Stochastic</h2>
+            <p>
+                스토캐스틱(영어: stochastic)은 주식투자의 기술적 분석에 사용되는 보조 지표로, 공식 명칭은 스토캐스틱 오실레이터(영어: stochastic oscillator)이다. 스토캐스틱
+                지표는
+                1950년대 William Dunnigun이 소개하고 George Lane이 널리 보급하였다. 고승덕은 증권 전문가로 활동할 당시, 스토캐스틱이 실전에서 잘 맞는다는 의미로 '마법의
+                지표'라고
+                부르기도
+                했다.
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>

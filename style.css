@@ -1,0 +1,57 @@
+/* <!-- CSS로 목차 글자 색상 변경 --> */
+/* a는 element selector */
+a {
+    /* a요소 글자 색상 설정 */
+    color: black;
+    /* a요소 글자 장식 없음 */
+    text-decoration: none;
+}
+
+h1 {
+    /* h1요소 글자 크기 설정 */
+    font-size: 50px;
+    /* h1요소 가운데 정렬 */
+    text-align: center;
+    border-bottom: solid gray 1px;
+    margin: 0;
+    padding: 20px;
+}
+
+ol {
+    border-right: solid gray 1px;
+    width: 100px;
+    margin: 0px;
+    padding: 20px;
+
+}
+
+body {
+    margin: 6px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+#grid ol {
+    padding-left: 25px;
+}
+
+#article {
+    padding: 20px;
+}
+
+@media(max-width: 700px) {
+    #grid {
+        display: block;
+    }
+
+    ol {
+        border-right: none;
+    }
+
+    h1 {
+        border-bottom: none;
+    }
+}
