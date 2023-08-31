@@ -13,11 +13,181 @@
     </script>
     <title>WEB1 - 기술적 분석</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- style tag 안에 있는 것은 CSS로 인식 -->
+    <!-- 우선순위는 #(id selector) -> .(class selector) -> tag(element selector) -->
+    <style>
+        .tech {
+            font-weight: bold;
+            color: red;
+        }
+
+        #first {
+            color: green;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- day, night라는 2개의 버튼을 삽입하고 버튼을 누르면 배경색과 글자색이 변하는 기능 -->
+    <input type="button" value="day1" onclick="
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black'
+    ">
+    <input type="button" value="night1" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white'
+    ">
+
+    <!-- 1개의 버튼으로 day, night 모드에 따라 배경색과 글자색이 변하는 기능 -->
+    <input id="night_day" type="button" value="night2" onclick="
+    if(document.querySelector('#night_day').value === 'night2'){
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+    document.querySelector('#night_day').value = 'day2';
+    } else{
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+    document.querySelector('#night_day').value = 'night2';
+    }">
+
+    <!-- 1개의 버튼으로 day, night 모드에 따라 배경색과 글자색이 변하는 기능 -->
+    <!-- 리팩토링, 중복 제거 -->
+    <!-- While & Array, 모드에 따라 a tag 글자색 변경 기능 -->
+    <input type="button" value="night3" onclick="
+    var target = document.querySelector('body');
+    // this.value로 바로 위에 value를 지정한다.
+    if(this.value === 'night3'){
+    // target으로 document.querySelector('body')을 지정한다.
+    target.style.backgroundColor = 'black';
+    target.style.color = 'white';
+    this.value = 'day3';
+
+    var aList = document.querySelectorAll('a');
+    var i = 0;
+    while( i < aList.length){
+        aList[i].style.color = 'powderblue';
+        i++;
+    }
+
+    } else{
+    target.style.backgroundColor = 'white';
+    target.style.color = 'black';
+    this.value = 'night3';
+
+    var aList = document.querySelectorAll('a');
+    var i = 0;
+    while( i < aList.length){
+        aList[i].style.color = 'blue';
+        i++;
+    }
+    }">
+
+    <!-- 1개의 버튼으로 day, night 모드에 따라 배경색과 글자색이 변하는 기능 -->
+    <!-- 리팩토링, 중복 제거 -->
+    <!-- While & Array, 모드에 따라 a tag 글자색 변경 기능 -->
+    <!-- function으로 함수를 만들고 그 함수를 호출하여 기능 구현 -->
+    <input type="button" value="night4" onclick="
+    nightDayHandler4(this)
+    ">
+    <script>
+        function nightDayHandler4(self) {
+            var target = document.querySelector('body');
+            // this.value로 바로 위에 value를 지정한다.
+            if (self.value === 'night4') {
+                // target으로 document.querySelector('body')을 지정한다.
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'day4';
+
+                var aList = document.querySelectorAll('a');
+                var i = 0;
+                while (i < aList.length) {
+                    aList[i].style.color = 'powderblue';
+                    i++;
+                }
+
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'night4';
+
+                var aList = document.querySelectorAll('a');
+                var i = 0;
+                while (i < aList.length) {
+                    aList[i].style.color = 'blue';
+                    i++;
+                }
+            }
+        }
+    </script>
+
+    <!-- 1개의 버튼으로 day, night 모드에 따라 배경색과 글자색이 변하는 기능 -->
+    <!-- 리팩토링, 중복 제거 -->
+    <!-- While & Array, 모드에 따라 a tag 글자색 변경 기능 -->
+    <!-- function으로 함수를 만들고 그 함수를 호출하여 기능 구현 -->
+    <input type="button" value="night5" onclick="
+    nightDayHandler5(this)
+    ">
+    <!-- 중복되는 기능들을 함수와 객체를 이용해서 간결화 -->
+    <script>
+        var Body = {
+            setBackgroundColor: function (color) {
+                document.querySelector('body').style.backgroundColor = color
+            },
+            setColor: function (color) {
+                document.querySelector('body').style.color = color
+            }
+        }
+
+        var Links = {
+            setColor: function (color) {
+                var aList = document.querySelectorAll('a');
+                var i = 0;
+                while (i < aList.length) {
+                    aList[i].style.color = color;
+                    i++;
+                }
+            }
+        }
+
+        function nightDayHandler5(self) {
+            var target = document.querySelector('body')
+            // this.value로 바로 위에 value를 지정한다.
+            if (self.value === 'night5') {
+                // target으로 document.querySelector('body')을 지정한다.
+                Body.setBackgroundColor('black')
+                Body.setColor('white')
+                self.value = 'day5'
+
+                Links.setColor('powderblue')
+
+            } else {
+                Body.setBackgroundColor('white')
+                Body.setColor('black')
+                self.value = 'night5'
+
+                Links.setColor('blue')
+
+            }
+        }
+    </script>
+
+    <!-- js파일로 구현 -->
+    <!-- 1개의 버튼으로 day, night 모드에 따라 배경색과 글자색이 변하는 기능 -->
+    <!-- 리팩토링, 중복 제거 -->
+    <!-- While & Array, 모드에 따라 a tag 글자색 변경 기능 -->
+    <!-- function으로 함수를 만들고 그 함수를 호출하여 기능 구현 -->
+    <input type="button" value="night6" onclick="
+    nightDayHandlerJs(this)
+    ">
+    <!-- colors.js파일의 소스를 가져와서 기능을 구현 -->
+    <script src="colors.js">
+    </script>
+
     <h1><a href="index.html">퀀트 투자</a></h1>
-    <div id="grid">
+
+    <div id=" grid">
         <ol> <!-- Ordered List -->
             <li><a href="1.html">RSI</a></li> <!-- List -->
             <li><a href="2.html">Stochastic</a></li>
@@ -25,12 +195,36 @@
         </ol>
 
         <div id="article">
-            <h2>기술적 분석</h2>
+            <!-- CSS로 style변경 -->
+            <h2 style="background-color: coral; color: powderblue;"><span class="tech">기술적 분석</span></h2>
             <p>
-                기술적 분석(技術的 分析, 영어: technical analysis)은 주식 시장을 비롯한 금융 시장을 분석하고 예측하는 기법 가운데 하나다. 주로 시세 동향 그래프(차트)를 이용해
+                <!-- span은 줄바꿈 없음, div는 줄바꿈 있음 -->
+                <span id="first" class="tech">기술적 분석</span>(技術的 分析, 영어: technical analysis)은 주식 시장을 비롯한 금융 시장을 분석하고 예측하는
+                기법 가운데
+                하나다. 주로 시세 동향
+                그래프(차트)를 이용해
                 분석한다.
 
-                기본적 분석과 대비되는 분석 기법이다.
+                기본적 분석과 대비되는 분석 기법이다. <span class="tech">기술적 분석</span>
+            </p>
+
+            <p>
+            <h2>지위</h2>
+            금융 시장의 가격 예측에는 몇 가지 방법이 있다. 학계에서 일반적으로 인정하는 것은 효율적 시장 가설(EMH)과 랜덤워크 이론으로, 이는 시장에서의 가격 예측이 불가능하다고 결론짓는다.
+
+            이러한 이론에도 불구하고 실무에서는 어떻게든 가격 움직임을 맞추기 위해 애쓸 때가 많다. 기본적 분석은 가격 결정의 원인을 거슬러 올라간다. 주식은 회사의 소유 지분이며, 주가는
+            기본적으로 그 회사의 수익성이나 사업 전망 등에 의해 결정된다고 할 수 있다. 수익성이 높은데 주가가 상대적으로 낮다면, 가격은 회사의 가치와 일치하는 방향으로 움직일 것이라고 기대할 수
+            있다. 기본적 분석은 이처럼 가격과 실제 가치의 괴리를 발견하기 위한 방법이다.
+
+            <span class="tech">기술적 분석</span>은 시장의 가격 그 자체에만 관심을 가지고, 그러한 가격 움직임의 원인에는 관심을 두지 않는다. 몇 가지의 가정과 과거와 현재의 가격
+            움직임에 따라 미래의 가격이 어떻게
+            움직일지를 예측한다. <span class="tech">기술적 분석</span>은 이론적인 뒷받침이 거의 없으며, 분석의 유효성은 과거의 시장 경험에 의존한다. 오늘날 개인용 컴퓨터가 보급됨에
+            따라 확산되고 있다.
+
+            기본적 분석은 경제분석가, 시장분석가, 애널리스트의 지지를 받으며 발전을 계속하고 있으며, 고액의 연봉을 받는 이들 분석가들은 펀드 매니저와 함께 시장의 주류를 형성하고 있다. 반면
+            <span class="tech">기술적 분석</span>가는 일부 증권사에서 한두 명이 리서치 센터에 속해 그래프를 통한 시장분석을 내놓고 있으나, 보조적인 입장에서 개인 투자자에게 참고
+            자료를 제공하는 위치에 있다. 기관
+            투자가들은 거의 대부분 기본적 분석을 중심으로 시장에 대응하고 있으며, 개인 투자자들은 주로 <span class="tech">기술적 분석</span>에 의거하여 시장에 참여하고 있다.
             </p>
         </div>
     </div>

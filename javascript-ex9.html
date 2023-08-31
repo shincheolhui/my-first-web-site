@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <h1>Function</h1>
+    <h2>Basic</h2>
+    <ul>
+        <script>
+            document.write('<li>1</li>');
+            document.write('<li>2-1</li>');
+            document.write('<li>2-2</li>');
+            document.write('<li>3</li>');
+            document.write('<li>2-1</li>');
+            document.write('<li>2-2</li>');
+        </script>
+    </ul>
+
+    <ul>
+        <script>
+            function two() {
+                document.write('<li>2-1</li>');
+                document.write('<li>2-2</li>');
+            }
+            document.write('<li>1</li>');
+            two()
+            document.write('<li>3</li>');
+            two()
+        </script>
+    </ul>
+
+    <h2>Parameter(매개변수) & Arguments(인수/독립변수)</h2>
+    <script>
+        function onePlusOne() {
+            document.write(1 + 1 + '<br>')
+        }
+        onePlusOne()
+
+        function sum(fst, sec) {
+            document.write(fst + sec + '<br>')
+        }
+
+        function sumColor(fst, sec) {
+            document.write('<div style="color:red">' + (fst + sec) + '</div>')
+        }
+        sum(1, 2)
+        sum(3, 7)
+        sumColor(3, 7)
+    </script>
+
+    <h2>Return</h2>
+    <script>
+        function sum2(fst, sec) {
+            return fst + sec;
+        }
+        document.write(sum2(2, 3) + '<br>')
+        document.write('<div style="color:red">' + sum2(2, 3) + '</div>')
+        document.write('<div style="font-size:3rem">' + sum2(2, 3) + '</div>')
+    </script>
+</body>
+
+</html>
